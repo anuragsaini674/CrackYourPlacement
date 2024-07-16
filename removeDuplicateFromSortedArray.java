@@ -23,10 +23,10 @@ public class removeDuplicateFromSortedArray {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
         int arr[] = new int[size];
-        size--;
-        while(size>=0){
-            arr[size] = sc.nextInt();
-            size--;
+        int n = 0;
+        while(n<size){
+            arr[n] = sc.nextInt();
+            n++;
         }
 
         System.out.println(calculate(arr));
