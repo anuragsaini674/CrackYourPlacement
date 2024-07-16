@@ -1,5 +1,8 @@
 import java.util.*;
 
+
+// FInd the dupliacte number using Floyd's Algotrithm(Slow and Fast Pointer)
+
 public class findTheDuplicateNumber{
 
     public static int calculate(int arr[]){
