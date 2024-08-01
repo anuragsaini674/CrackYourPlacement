@@ -5,22 +5,17 @@ public class validParanthesis {
 
     public static boolean calculate(String s){
 
-        Stack<Integer> st = new Stack<Integer>();
+        Stack<Character> st = new Stack<Character>();
 
         for(int i=0;i<s.length();i++){
 
-            if(s.charAt(i)=='(')    st.push(1);
-            else if(s.charAt(i)==')'){
-                if(st.pop()==1) return false;
-            }
-
-
-            if(s.charAt(i)=='(' || s.charAt(i)=='{' || s.charAt(i)=='[')    st.push(1);
-            else    if(st.pop()!=1) return false;     
+            if(s.charAt(i)=='(')    st.add(')');
+            else if(s.charAt(i)=='{')   st.add('}');
+            else if(s.charAt(i)=='[')   st.add(']');
+            else if(st.isEmpty() || st.pop()!=s.charAt(i))  return false;
         }
 
-
-        return true;
+        return st.isEmpty();
     }
 
     public static void main(String[] args) {
